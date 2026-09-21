@@ -19,3 +19,7 @@ def test_divide():
 
 def test_divide_por_zero():
     assert divide(5, 0) is None
+
+
+def test_soma_negativos():
+    assert soma(-2, -3) == -5
