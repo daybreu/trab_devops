@@ -1,0 +1,23 @@
+name: Testes unitarios
+
+on:
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  testes:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout do codigo
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Instalar pytest
+        run: pip install pytest
+
+      - name: Executar testes unitarios
+        run: pytest -v
