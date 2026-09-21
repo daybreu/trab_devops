@@ -21,3 +21,9 @@ jobs:
 
       - name: Executar testes unitarios
         run: pytest -v
+
+      - name: Enviar alerta no Discord
+        if: always()
+        uses: sarisia/actions-status-discord@v1
+        with:
+          webhook: ${{ secrets.DISCORD_WEBHOOK }}
